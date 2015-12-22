@@ -1,0 +1,9 @@
+Run Instructions:
+
+RUN :
+
+Now just try to compile and run that:
+
+md build\classes
+javac -sourcepath src -d build\classes src\com.test.Mycode\GuessNumber.java
+java -cp build\classes com.test.Mycode.GuessNumber
