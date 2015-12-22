@@ -1,0 +1,37 @@
+Output:
+
+Think of a number between 1 and 100
+
+Is this your number (options: yes, lower or higher)? 50
+
+no
+
+Is this your number (options: yes, lower or higher)? 51
+
+no
+
+Is this your number (options: yes, lower or higher)? 51
+
+no
+
+Is this your number (options: yes, lower or higher)? 51
+
+higher
+
+Is this your number (options: yes, lower or higher)? 76
+
+lower
+
+Is this your number (options: yes, lower or higher)? 64
+
+higher
+
+Is this your number (options: yes, lower or higher)? 70
+
+lower
+
+Is this your number (options: yes, lower or higher)? 67
+
+yes
+
+Great, Your number is :67
