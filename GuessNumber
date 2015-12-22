@@ -1,0 +1,67 @@
+package com.test.Mycode;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class GuessNumber {
+
+   /**
+   
+*  Class description goes here. class GuessNumber is a number guessing game, where the machine asks a series of questions to arrive at the number the user has in mind. The user can only respond with “higher”, “lower” or “yes”.
+ 
+*  @version      
+         1.0 22 Dec 2015  
+* @author          
+         Gopi Addagiri */
+	
+	// Declare the constants	
+    private static final String LOWER = "lower";
+    private static final String HIGHER = "higher";   
+    private static final String YES = "yes";  
+
+    public static void main(String[] args) {
+       
+	// Initialize the variables
+        int lowerBound = 1;
+        int upperBound = 100;
+        int guess = 50;
+        boolean success = false;       
+        Scanner scanner = null;
+
+        try {    
+
+            System.out.println("Think of a number between " + lowerBound + " and " + upperBound);
+        
+
+            do {
+
+                System.out.println("Is this your number (options: yes, lower or higher)? " + guess);       
+                scanner = new Scanner(System.in);
+                String input = scanner.nextLine();  
+
+                if (YES.equalsIgnoreCase(input)) {
+                    System.out.println("Great, Your number is :" + guess);
+                    success = true;
+                    break;
+                	} else if (LOWER.equalsIgnoreCase(input)) {
+                    upperBound = guess;               
+                	} else if (HIGHER.equalsIgnoreCase(input)) {   
+                    lowerBound = guess;               
+
+                	}
+
+                guess = (upperBound + lowerBound + 1) / 2;
+               } while (!success);  
+
+            } catch (Exception e) {
+            System.err.println("Exception occurred:" + e.getMessage());          
+        	} 
+	    finally {   
+           	 if (scanner != null) {
+               	 scanner.close();
+                    	}
+        	    }       
+    }
+}
+
+
