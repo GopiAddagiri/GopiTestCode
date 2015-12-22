@@ -1,0 +1,36 @@
+
+Build Instrucitons:
+
+By default Ant uses build.xml as the name for a buildfile, so our .\build.xml would be:
+
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/GuessNumber.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="com.test.Mycode.GuessNumber"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="build/jar/GuessNumber.jar" fork="true"/>
+    </target>
+
+</project>
+
+Now you can compile, package and run the application via
+
+ant compile
+ant jar
+ant run
